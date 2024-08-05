@@ -1,0 +1,50 @@
+/* body{
+    background-color: aqua;
+} */
+
+header{
+    padding: 20px;
+    color: rgb(110, 210, 235);
+}
+
+
+#city{
+    padding: 10px;
+    border-radius: 50px;
+    width: 40%;
+    border:1px solid blue;
+
+}
+
+.s-btn{
+    content: url("../img/sun.png");
+    width: 20px;
+}
+
+#search{
+    padding: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    border:1px solid blue;
+    background-color: #CCF5AC;
+
+}
+
+.weather{
+    width: 50%;
+    border-radius: 50px;
+    height: 450px;
+}
+
+.input{
+    padding: 20px;
+}
+
+.weather{
+    background-color: #14bcebcb;
+}
+
+.theme span{
+    content:url("../img/sun.png");
+    width: 25px;
+}
