@@ -7,6 +7,7 @@ document.getElementById('search').addEventListener('click',()=>
 {
     const city=document.getElementById('city');
     Weather(city.value);
+    city.value="";
 });
 
 async function Weather(city) {
@@ -20,11 +21,15 @@ async function Weather(city) {
         }
         const data=await response.json();
         g_data=data;
+        const weatherData=document.getElementById('weathernow');
+        weatherData.textContent=data.weather[0].main;
+        const weatherImg=document.getElementById('w-img');
+        weatherImg.style.content=`url("../img/weather/${data.weather[0].icon}.png")`;
         const humidity=document.querySelector('.humidity');
         const pressure=document.querySelector('.pressure');
         humidity.textContent=data.main.humidity+'%';
         pressure.textContent=data.main.pressure;
-        document.getElementById('temp').textContent=Math.round(data.main.temp);
+        document.getElementById('temp').textContent=`${Math.round(data.main.temp)}℃`;
         document.querySelector('.city-name').textContent=data.name;
     }
     catch(error){
