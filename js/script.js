@@ -5,10 +5,20 @@ let g_data;
 
 document.getElementById('search').addEventListener('click',()=>
 {
+    findWeather();
+});
+
+function findWeather()
+{
     const city=document.getElementById('city');
+    if(!city.value)
+    {
+        alert("Enter City Before Click Search");
+        return;
+    }
     Weather(city.value);
     city.value="";
-});
+}
 
 async function Weather(city) {
     try{
@@ -33,6 +43,13 @@ async function Weather(city) {
         document.querySelector('.city-name').textContent=data.name;
     }
     catch(error){
+        alert("Please check the city you Entered");
         console.error(error);
     }
 }
+
+document.getElementById('city').addEventListener('keyup',(k)=>{
+    if(k.key==='Enter'){
+    findWeather();
+    }
+});
